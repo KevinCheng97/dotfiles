@@ -7,7 +7,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=/Users/kevin/.oh-my-zsh
 export POWERLEVEL9K_INSTALLATION_PATH=$HOME/.oh-my-zsh/custom/themes/powerlevel9k
 
-plugins=(git brew git-extras)
+plugins=(git brew git-extras zsh-autosuggestions)
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
