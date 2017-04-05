@@ -1,0 +1,11 @@
+[user]
+	name = Kevin Cheng
+	email = kevin.cheng.97@gmail.com
+[alias]
+	co = checkout
+        br = branch
+        st = status
+[push]
+	default = upstream
+[color]
+	ui = true
