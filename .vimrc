@@ -1,8 +1,3 @@
-let $VIM = '/lxhome/chengkev/vim/src/vim'
-let $VIMRUNTIME='/lxhome/chengkev/vim/runtime/'
-set runtimepath^=$VIMRUNTIME
-set helpfile=$VIMRUNTIME/doc/help.txt 
-
 set clipboard=unnamed
 set autoread
 set mouse=a
