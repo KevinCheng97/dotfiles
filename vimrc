@@ -36,7 +36,7 @@ call vundle#end()
 filetype plugin on
 
 " Autosave
-autocmd InsertLeave * update
+autocmd InsertLeave * silent! update
 
 " Enabling Mouse
 set mouse=a
