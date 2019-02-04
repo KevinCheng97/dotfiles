@@ -1,6 +1,7 @@
+source ~/.bash_profile
 export TERM="xterm-256color"
 
-. `brew --prefix`/etc/profile.d/z.sh
+source `brew --prefix`/etc/profile.d/z.sh
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -8,12 +9,15 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/kevin/.oh-my-zsh
 export POWERLEVEL9K_INSTALLATION_PATH=$HOME/.oh-my-zsh/custom/themes/powerlevel9k
+alias cd:Q!
+
 
 plugins=(git brew git-extras zsh-autosuggestions)
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+POWERLEVEL9K_MODE="awesome-patched"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -36,7 +40,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -97,10 +101,7 @@ alias cp="cp -iv"
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="↳ "
 
-POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon load context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm time node_version)
 
 POWERLEVEL9K_OS_ICON_BACKGROUND="white"
 POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
@@ -110,7 +111,7 @@ POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
-source ~/.bash_profile
-
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon virtualenv ram context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm time node_version)
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

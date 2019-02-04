@@ -21,9 +21,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tmhedberg/SimpylFold'
 
 " Python Editor
-Plugin 'Vimjas/vim-python-pep8-indent'          " Smart indentation
+Plugin 'Vimjas/vim-python-pep8-indent'         " PEP8
 Plugin 'scrooloose/syntastic'                  " Syntax
 Plugin 'altercation/vim-colors-solarized'      " Coloring
+Plugin 'vim-scripts/indentpython.vim'          " Indenting
 
 " Auto-completion for python
 " Plugin 'Valloric/YouCompleteMe'
@@ -57,11 +58,19 @@ au BufNewFile,BufRead *.py
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set expandtab |
+    \ set textwidth=79|
     \ set fileformat=unix |
     \ set encoding=utf-8 |
-    \ set autoindent |
+    \ set autoindy yyp|
     \ set smartindent |
-    \ set smarttab
+    \ set smarttab |
+    \ set cindent |
+    \ set cinoptions=g-1 |
+    \ set colorcolumn=79
+
+" White space highlighting
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -102,6 +111,7 @@ func! WordProcessorMode()
  setlocal textwidth=80
  setlocal spell spelllang=en_us
  setlocal noexpandtab
+ setlocal colorcolumn=80
 endfu
 com! WP call WordProcessorMode()
 
